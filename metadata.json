@@ -1,0 +1,6 @@
+{
+  "name": "IMGFORGE",
+  "description": "Fast client-side image and media forge. Convert formats, package ZIP archives, create PDFs, reduce image sizes, and inspect archives securely in your browser.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
