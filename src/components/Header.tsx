@@ -18,7 +18,10 @@ import {
   Archive,
   User,
   ChevronDown,
-  Flame
+  Flame,
+  Braces,
+  QrCode,
+  Scan
 } from 'lucide-react';
 import { ToolId, AnimeTheme } from '../types';
 import { playAnimeSparkleSound, playWindChimeSound } from '../utils/audioUtils';
@@ -161,6 +164,9 @@ export const Header: React.FC<HeaderProps> = ({
             { id: 'format-converter' as ToolId, label: 'Convert Format', icon: ArrowLeftRight },
             { id: 'base64-studio' as ToolId, label: 'Base64 Studio', icon: Binary },
             { id: 'watermark' as ToolId, label: 'Watermark', icon: Stamp },
+            { id: 'json-formatter' as ToolId, label: 'JSON Tool', icon: Braces },
+            { id: 'qr-generator' as ToolId, label: 'QR Generator', icon: QrCode },
+            { id: 'qr-scanner' as ToolId, label: 'QR Scanner', icon: Scan },
           ].map((item) => {
             const Icon = item.icon;
             const isActive = activeTool === item.id;

@@ -62,6 +62,24 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTool }) => {
             >
               Reduce Size
             </button>
+            <button
+              onClick={() => onSelectTool('json-formatter')}
+              className="hover:text-teal-300 transition cursor-pointer"
+            >
+              JSON Tool
+            </button>
+            <button
+              onClick={() => onSelectTool('qr-generator')}
+              className="hover:text-pink-300 transition cursor-pointer"
+            >
+              QR Generator
+            </button>
+            <button
+              onClick={() => onSelectTool('qr-scanner')}
+              className="hover:text-indigo-300 transition cursor-pointer"
+            >
+              QR Scanner
+            </button>
           </div>
         </div>
       </div>

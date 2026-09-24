@@ -6,7 +6,10 @@ export type ToolId =
   | 'reduce-size'
   | 'format-converter'
   | 'base64-studio'
-  | 'watermark';
+  | 'watermark'
+  | 'json-formatter'
+  | 'qr-generator'
+  | 'qr-scanner';
 
 export interface ToolMeta {
   id: ToolId;

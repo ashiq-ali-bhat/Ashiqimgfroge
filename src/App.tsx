@@ -12,6 +12,8 @@ import { ReduceSizeTool } from './components/tools/ReduceSizeTool';
 import { FormatConverterTool } from './components/tools/FormatConverterTool';
 import { Base64StudioTool } from './components/tools/Base64StudioTool';
 import { WatermarkTool } from './components/tools/WatermarkTool';
+import { JsonFormatterTool } from './components/tools/JsonFormatterTool';
+import { QrStudioTool } from './components/tools/QrStudioTool';
 import { DeveloperContact } from './components/DeveloperContact';
 import { playAnimeSparkleSound } from './utils/audioUtils';
 import { 
@@ -23,7 +25,10 @@ import {
   Minimize2, 
   ArrowLeftRight, 
   Binary, 
-  Stamp
+  Stamp,
+  Braces,
+  QrCode,
+  Scan
 } from 'lucide-react';
 
 export default function App() {
@@ -89,6 +94,9 @@ export default function App() {
                     { id: 'format-converter' as ToolId, label: 'Convert', icon: ArrowLeftRight },
                     { id: 'base64-studio' as ToolId, label: 'Base64', icon: Binary },
                     { id: 'watermark' as ToolId, label: 'Watermark', icon: Stamp },
+                    { id: 'json-formatter' as ToolId, label: 'JSON Tool', icon: Braces },
+                    { id: 'qr-generator' as ToolId, label: 'QR Generator', icon: QrCode },
+                    { id: 'qr-scanner' as ToolId, label: 'QR Scanner', icon: Scan },
                   ].map((tab) => {
                     const Icon = tab.icon;
                     const isCurrent = activeTool === tab.id;
@@ -123,6 +131,19 @@ export default function App() {
                 {activeTool === 'format-converter' && <FormatConverterTool />}
                 {activeTool === 'base64-studio' && <Base64StudioTool />}
                 {activeTool === 'watermark' && <WatermarkTool />}
+                {activeTool === 'json-formatter' && <JsonFormatterTool />}
+                {activeTool === 'qr-generator' && (
+                  <QrStudioTool 
+                    initialTab="generator" 
+                    onNavigateToJsonFormatter={() => setActiveTool('json-formatter')} 
+                  />
+                )}
+                {activeTool === 'qr-scanner' && (
+                  <QrStudioTool 
+                    initialTab="scanner" 
+                    onNavigateToJsonFormatter={() => setActiveTool('json-formatter')} 
+                  />
+                )}
               </div>
             </div>
           )}

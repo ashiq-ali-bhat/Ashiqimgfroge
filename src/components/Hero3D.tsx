@@ -12,7 +12,10 @@ import {
   Zap, 
   FileUp, 
   ArrowRight,
-  Archive
+  Archive,
+  Braces,
+  QrCode,
+  Scan
 } from 'lucide-react';
 import { ToolId, ToolMeta } from '../types';
 import { playAnimeSparkleSound } from '../utils/audioUtils';
@@ -88,6 +91,33 @@ const TOOLS_CATALOG: ToolMeta[] = [
     iconName: 'Stamp',
     accentColor: 'from-rose-500/20 to-red-500/20 text-rose-400 border-rose-500/30',
   },
+  {
+    id: 'json-formatter',
+    title: 'JSON Format & Converter',
+    categorySubtitle: 'Developer Data Tool',
+    shortDesc: 'Format, validate, minify, explore interactive tree hierarchies, and convert JSON to YAML, CSV, XML, and key paths.',
+    iconName: 'Braces',
+    badge: 'NEW',
+    accentColor: 'from-emerald-500/20 to-teal-500/20 text-emerald-400 border-emerald-500/30',
+  },
+  {
+    id: 'qr-generator',
+    title: 'QR Code Generator',
+    categorySubtitle: 'Universal QR Studio',
+    shortDesc: 'Generate QR codes for Links, Text, Images, animated GIFs, Wi-Fi passwords, vCard contacts, emails, and crypto addresses.',
+    iconName: 'QrCode',
+    badge: 'NEW',
+    accentColor: 'from-pink-500/20 to-rose-500/20 text-pink-400 border-pink-500/30',
+  },
+  {
+    id: 'qr-scanner',
+    title: 'QR to Image & Media',
+    categorySubtitle: 'Decode & Convert',
+    shortDesc: 'Scan any QR code from file or camera. Extract decoded images & GIFs, and convert them to PNG, JPG, or WebP formats.',
+    iconName: 'Scan',
+    badge: 'NEW',
+    accentColor: 'from-indigo-500/20 to-purple-500/20 text-indigo-400 border-indigo-500/30',
+  },
 ];
 
 export const Hero3D: React.FC<Hero3DProps> = ({ onSelectTool, onUniversalFileDrop, soundEnabled }) => {
@@ -120,6 +150,9 @@ export const Hero3D: React.FC<Hero3DProps> = ({ onSelectTool, onUniversalFileDro
       case 'ArrowLeftRight': return <ArrowLeftRight className="w-6 h-6" />;
       case 'Binary': return <Binary className="w-6 h-6" />;
       case 'Stamp': return <Stamp className="w-6 h-6" />;
+      case 'Braces': return <Braces className="w-6 h-6" />;
+      case 'QrCode': return <QrCode className="w-6 h-6" />;
+      case 'Scan': return <Scan className="w-6 h-6" />;
       default: return <Sparkles className="w-6 h-6" />;
     }
   };
